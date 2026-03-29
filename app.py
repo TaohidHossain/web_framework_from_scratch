@@ -18,3 +18,11 @@ def greetings(request, response, name):
 def add(request, response, a, b):
     result = a + b
     response.text = f"{a} + {b} = {result}"
+
+@app.route("/users")
+class User:
+    def get(self, req, res):
+        res.text = "List of all users"
+    
+    def post(self, req, res):
+        res.text = "Create a new user"
